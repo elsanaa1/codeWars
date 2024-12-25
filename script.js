@@ -94,7 +94,7 @@ function accum(word){
  
 }
 
-// A square of squares:
+//You're a square!:
 // Given an integral number, determine if it's a square number:
 function isSquare(num){
 
@@ -107,3 +107,12 @@ if(Number.isInteger(sq)){
 }
 
 
+// Disemvowel Trolls
+// A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+// For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+// Note: for this kata y isn't considered a vowel.
+function trollF(word){
+let regex=new RegExp("[aeiuoAOIUO]",'g')
+let res=word.replace(regex,'')
+return res;
+}
