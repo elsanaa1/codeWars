@@ -65,7 +65,34 @@ function opposNum(num){
     }
 }
 
+// This time no story, no theory. The examples below show you how to write function accum:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// The parameter of accum is a string which includes only letters from a..z and A..Z.
 
+function accum(word){
+    let newWord="";
+    let resultTab=[];//table of mumbling words
+   for(let i=1;i<=word.length;i++){
+        
+        for(let j=1;j<=i;j++){
+            if(j==1)
+             {
+	     //	newtab.push(word[i-1].toUpperCase())
+                newWord+=word[i-1].toUpperCase()
+             }else{
+	     //	newtab.push(word[i-1])
+              newWord+=word[i-1]
+              }
+       }
+       resultTab.push(newWord)
+       newWord=""
+
+    }
+    
+     let resultWord=resultTab.join("-")
+     return resultWord
+ 
+}
 
 
 
