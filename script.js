@@ -107,7 +107,7 @@ if(Number.isInteger(sq)){
 }
 
 
-// Disemvowel Trolls
+// Disemvowel Trolls:
 // A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
 // For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
 // Note: for this kata y isn't considered a vowel.
@@ -116,3 +116,19 @@ let regex=new RegExp("[aeiuoAOIUO]",'g')
 let res=word.replace(regex,'')
 return res;
 }
+
+
+// Highest and Lowest:
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+// Output string must be two numbers separated by a single space, and highest number is first.
+
+function highLow(w){
+    let tab=w.split(" ")
+    for(let i=0;i<tab.length;i++){
+        tab[i]=Number.parseInt(tab[i]);
+    }
+    let max= Math.max(...tab)
+    let min= Math.min(...tab)
+    return max+" "+min;
+    }
+    
