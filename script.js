@@ -73,7 +73,7 @@ function accum(word){
     let newWord="";
     let resultTab=[];//table of mumbling words
    for(let i=1;i<=word.length;i++){
-        
+        // repeat i times every caracter
         for(let j=1;j<=i;j++){
             if(j==1)
              {
@@ -94,5 +94,16 @@ function accum(word){
  
 }
 
+// A square of squares:
+// Given an integral number, determine if it's a square number:
+function isSquare(num){
+
+let sq=Math.sqrt(Number(num));
+if(Number.isInteger(sq)){
+    return true
+ }else{
+     return false
+ }
+}
 
 
