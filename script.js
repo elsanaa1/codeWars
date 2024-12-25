@@ -132,3 +132,19 @@ function highLow(w){
     return max+" "+min;
     }
     
+
+    // Exes and Ohs:
+    // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive.
+    //  The string can contain any char.
+    //  Examples input/output: XO("ooxx") => true
+    function exesOhs(w){
+        let countX=0;
+        let countO=0;
+        for ( let i=0;i<=w.length-1;i++){
+            
+            if(w[i]=='o' || w[i] == 'O') {countO++}
+            if( w[i]=='x' ||w[i]=='X') {countX++}
+        }
+        if(countX == countO ){ return true}
+        else{ return false }
+        }
