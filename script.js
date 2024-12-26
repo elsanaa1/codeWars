@@ -206,7 +206,7 @@ function highLow(w){
                  }
              return sum;
         }
-        // Isograms:
+        //Isograms :
 
         // An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
         // Implement a function that determines whether a string that contains only letters is an isogram. 
@@ -224,4 +224,16 @@ function highLow(w){
                 }
             }
             return true
+        }
+
+        // List Filtering:
+        // In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+        function listFilter(lis){
+            let intList=[]
+            for(e of lis){
+                if(Number.isInteger(e)){
+                    intList.push(e)
+                }
+            }
+            return intList
         }
