@@ -237,3 +237,9 @@ function highLow(w){
             }
             return intList
         }
+
+        //Find the smallest integer in the array
+        function smallestInt(lis){
+            let min=Math.min(...lis)
+            return min;
+        }
