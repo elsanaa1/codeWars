@@ -11,16 +11,16 @@ function countv(word){
         { count++;}
     }
    return count;
-    
+
 }
 
 
 
-// Create a function that takes 
+// Create a function that takes
 // an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 // Solution:
 function ev_odd(num){
-  
+
 if(num%2==0){
     return "Even"
 }else{
@@ -35,7 +35,7 @@ if(num%2==0){
 // Solution:
 function middchar(word){
     let len=word.length;
-    let div=len/2; 
+    let div=len/2;
     if(Number.isInteger(div)){
         let midd=word[Math.trunc(div)-1]
         let midd2=word[Math.trunc(div)]
@@ -88,10 +88,10 @@ function accum(word){
        newWord=""
 
     }
-    
+
      let resultWord=resultTab.join("-")
      return resultWord
- 
+
 }
 
 //You're a square!:
@@ -131,7 +131,7 @@ function highLow(w){
     let min= Math.min(...tab)
     return max+" "+min;
     }
-    
+
 
     // Exes and Ohs:
     // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive.
@@ -141,7 +141,7 @@ function highLow(w){
         let countX=0;
         let countO=0;
         for ( let i=0;i<=w.length-1;i++){
-            
+
             if(w[i]=='o' || w[i] == 'O') {countO++}
             if( w[i]=='x' ||w[i]=='X') {countX++}
         }
@@ -173,7 +173,7 @@ function highLow(w){
         }
 
         // Complementary DNA:
-        // Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the 
+        // Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the
         // "instructions" for the development and functioning of living organisms."ATTGC" --> "TAACG"
         function compDNA(w){
             let complW=""
@@ -186,7 +186,7 @@ function highLow(w){
             return complW;
         }
         // Descending Order:
-        // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. 
+        // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order.
         // Essentially, rearrange the digits to create the highest possible number.
         function descendOrder(w){
             let tab = w.toString().split("")
@@ -205,4 +205,23 @@ function highLow(w){
                             }
                  }
              return sum;
+        }
+        // Isograms:
+
+        // An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
+        // Implement a function that determines whether a string that contains only letters is an isogram. 
+        // Assume the empty string is an isogram. Ignore letter case.
+        function isogrF(w){
+            let sortedtab=w.split('')
+            for(let i=0;i<=sortedtab.length-1;i++){
+            sortedtab[i]=sortedtab[i].toLowerCase()
+            }
+        sortedtab.sort()
+            console.log(sortedtab)
+            for(let i=0;i<=sortedtab.length-1;i++){
+            if(sortedtab[i]==sortedtab[i-1] ||sortedtab[i]==sortedtab[i+1]){
+                    return false
+                }
+            }
+            return true
         }
