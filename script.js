@@ -148,3 +148,16 @@ function highLow(w){
         if(countX == countO ){ return true}
         else{ return false }
         }
+
+        // Square Every Digit:
+        function squarDigits(word){
+            let tab=word.split("")
+            let tabRes=[]
+            for(let e of tab){
+                tabRes.push(Number(e)*Number(e));
+            }
+            let resWord=tabRes.join("")
+            return resWord
+        }
+
+        
