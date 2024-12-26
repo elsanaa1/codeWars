@@ -171,3 +171,18 @@ function highLow(w){
             let  minLenght=Math.min(...tabLengths)
             return minLenght
         }
+
+        // Complementary DNA:
+        // Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the 
+        // "instructions" for the development and functioning of living organisms."ATTGC" --> "TAACG"
+        function compDNA(w){
+            let complW=""
+            for (let i=0;i<=w.length;i++){
+                if(w[i]=='A'){complW+='T'}
+                else if(w[i]=='T'){complW+='A'}
+                else if(w[i]=='C'){complW+='G'}
+                else if(w[i]=='G'){complW+='C'}
+            }
+            return complW;
+        }
+        
