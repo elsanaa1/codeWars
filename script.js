@@ -160,4 +160,14 @@ function highLow(w){
             return resWord
         }
 
-        
+        // Shortest Word  :
+        // Simple, given a string of words, return the length of the shortest word(s).
+        function shortestW(s){
+            let tabWords=s.split(" ")
+            let tabLengths=[]
+            for(e of tabWords ){
+                tabLengths.push(e.length);
+            }
+            let  minLenght=Math.min(...tabLengths)
+            return minLenght
+        }
