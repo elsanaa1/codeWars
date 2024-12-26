@@ -289,3 +289,50 @@ function highLow(w){
             if(a+b>c &&b+c>a&& a+c>b){return true}
             return false
         }
+        // Find the next perfect square!
+        function findNextSquare(num){
+            if (Number.isInteger(Math.sqrt(num))){
+                   let next= Math.sqrt(num) + 1
+                   next=next * next;
+                    return next
+            }
+            else
+             { return -1}
+                
+            }
+
+
+            // Credit Card Mask:
+
+            function maskify(num){
+                let tab=num.split("")
+                 let newNum=[];
+                for ( let i= tab.length-1 ;i>=0;i--){
+                    if (i==tab.length-1 || i==tab.length-2||i==tab.length-3||i==tab.length-4){
+                    
+                       newNum.unshift(tab[i])
+                    }
+                    else{
+                          newNum.unshift("#")
+                       
+                    }
+                }
+                    return newNum.join("")
+                }
+
+                
+                // Find the divisors!
+                function divisors(n){
+    
+                    let tabRes = [];
+                     for(let i = 2; i < n; i++) {
+                        if( n % i == 0) {
+                         tabRes.push(i)
+                         }
+                     }
+                     if(tabRes.length==0){ return n+" is prime";}
+                     else{  
+                        tabRes.sort((a, b) => a - b);
+                        return tabRes 
+                       }
+                    }
