@@ -243,3 +243,18 @@ function highLow(w){
             let min=Math.min(...lis)
             return min;
         }
+
+        // Sum of two lowest positive integers
+        // Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers.
+        //  No floats or non-positive integers will be passed.
+        function sumTwoLowest(arr){
+            let min=Math.min(...arr)
+            let indx=arr.indexOf(min)
+            arr.splice(indx,1)
+           let min2=Math.min(...arr)
+           return min+min2
+        }
+
+        
+
+
