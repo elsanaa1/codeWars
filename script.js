@@ -195,7 +195,14 @@ function highLow(w){
             return res;
                     }
 
-                    
-
-
-        
+        // Sum of positive :
+        // You get an array of numbers, return the sum of all of the positives ones.
+        function sumPosit(arrNum){
+           let sum=0
+                 for(e of arrNum){
+                            if (Math.sign(e)==1){
+                                sum+=e;
+                            }
+                 }
+             return sum;
+        }
