@@ -208,8 +208,8 @@ function highLow(w){
         }
         //Isograms :
 
-        // An isogram is a word that has no repeating letters, consecutive or non-consecutive. 
-        // Implement a function that determines whether a string that contains only letters is an isogram. 
+        // An isogram is a word that has no repeating letters, consecutive or non-consecutive.
+        // Implement a function that determines whether a string that contains only letters is an isogram.
         // Assume the empty string is an isogram. Ignore letter case.
         function isogrF(w){
             let sortedtab=w.split('')
@@ -270,7 +270,7 @@ function highLow(w){
                 nb_y++;
             }
             return nb_y;
-            
+
         }
         // String repeat,
         // Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
@@ -282,4 +282,10 @@ function highLow(w){
             i++
         }
          return sum
+        }
+        // """"""""""""""""""""""Algorithms""""""""""""""""""""""""""""""""
+        // Is this a triangle?
+        function isTriangle(a,b,c){
+            if(a+b>c &&b+c>a&& a+c>b){return true}
+            return false
         }
