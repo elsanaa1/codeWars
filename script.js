@@ -254,7 +254,7 @@ function highLow(w){
            let min2=Math.min(...arr)
            return min+min2
         }
-        // Growth of a Population
+        // Growth of a Population:
         // p0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)
         // the function nb_year should return n number of entire years needed to get a population greater or equal to p.
         // aug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)
@@ -271,4 +271,15 @@ function highLow(w){
             }
             return nb_y;
             
+        }
+        // String repeat,
+        // Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+        function repeatS(s,n){
+            let i=1
+            let sum=""
+         while(i<=n){
+            sum=s+sum
+            i++
+        }
+         return sum
         }
