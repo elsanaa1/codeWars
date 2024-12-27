@@ -442,3 +442,67 @@ function highLow(w){
             } 
             return tab
          }
+
+        //  Reversed Strings
+        function inversWord(w){
+            let tab=w.split("")
+            let inv=tab.reverse().join("")
+            return inv
+         }
+
+        //  String ends with?
+        function solution(word, end){
+            let boolexist=word.includes(end,word.length-end.length)
+            return boolexist
+        }
+
+        // Abbreviate a Two Word Name
+        function abbrev(name){
+            let tab=name.split(" ")
+        let firstLett=tab[0][0]
+        let lastLett=tab[1][0]
+        return firstLett.toUpperCase()+"."+lastLett.toUpperCase()
+        }
+        
+        // DNA to RNA Conversion
+        function dnaTorna(dna){
+            let rna=dna.replace(/T/g,"U");
+            return rna
+         }
+        // """""""""""""""""""""""""" Arrays""""""""""""""""""""""""""
+        // Counting sheep...
+         function countSheeo(arr){
+            let count=0
+            for(e of arr){
+                if(e==true){
+                    count++
+                }
+            }
+            return count
+        }
+
+
+        // Ones and Zeros
+        function convrt(tab){
+            let bin=tab.join("")
+         let num=parseInt(bin, 2)
+         return num
+       }
+    //    A Needle in the Haystack
+       function foundNeedle(tab){
+        for(let i=0;i<tab.length;i++){
+        if(tab[i]=="needle"){
+           return "found the needle at position "+ (i+1)
+        }
+    }
+      
+    }
+    // Remove the minimum
+
+    function removeminArr(arr){
+        let  min=Math.min(...arr)
+        let indx=arr.indexOf(min)
+        arr.splice(indx,1)
+        return arr
+    }
+    
