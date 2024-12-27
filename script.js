@@ -506,3 +506,72 @@ function highLow(w){
         return arr
     }
     
+    // Convert number to reversed array of digits
+    function convrtNbr(nbr){
+        let arr=String(nbr).split("")
+        return arr
+    }
+    // Make a function that does arithmetic!    
+    function mathOper(a,b,op){
+        if(op== "add" ){return a+b}
+        else if(op=="subtract"){return a-b}
+        else if(op=="multiply"){return a*b}
+        else if(op=="divide" ){return a/b}
+        }
+
+
+        
+        // Regular Ball Super Ball
+
+        class Ball{
+     
+            constructor( type="regular"){
+                 this.ballType=type 
+            }
+        }
+
+        // Make them bark!
+
+        class Dog{
+            constructor(name, breed, sex, age){
+               this.name  = name;
+               this.breed = breed;
+               this.sex   = sex;
+               this.age   = age;
+            }
+            
+            bark(){
+                return 'Woof!'
+            }
+        }
+
+      //"""""""""""""""""""""" Basic Language Features"""""""""""""""""
+    //   Grasshopper - Summation
+
+        function summ(nbr){
+            let sm=0
+          for(let i=1;i<=nbr;i++){
+              sm=sm+i;
+            }
+          return sm;
+        }
+     // Jenny's secret message
+        function greeting(name){
+            let gre="Hello "+name
+            return gre
+        }
+        
+        // Function 1 - hello world
+        function greet(){
+            let greet="hello World"
+            return greet
+        }
+        // Count the Monkeys!
+        function count(n){
+            let tabNum=[]
+            for(let i=1;i<=n;i++){
+                tabNum.push(i)
+            }
+            return tabNum
+        }
+        
