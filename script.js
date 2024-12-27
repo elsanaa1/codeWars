@@ -336,3 +336,109 @@ function highLow(w){
                         return tabRes 
                        }
                     }
+    //    """"""""""""""""""""""""" Data types """"""""""""""""""""""
+    // Return Negative:
+    function returNegativ(num){
+        let sign=Math.sign(Number(num))
+        if(sign==0)
+        {
+             return num;
+        }else if(sign==1){
+            return "-"+num;
+        }
+        else{
+            return Math.abs(Number(num));
+        }
+    }
+
+    // Remove First and Last Character:
+    function removFirstLast(s){
+        let tabS=s.split("")
+        tabS.splice(tabS.length-1,1);
+        tabS.splice(0,1);
+       return tabS.join("")
+    }
+    // Remove String Spaces
+    // Write a function that removes the spaces from the string, then return the resultant string.
+    function removWhiteSpace(s){
+        let tabS=""
+        for(let i=0;i<=s.length-1;i++){
+            if(s[i]==" "){}
+            else{tabS+=s[i] }
+        }
+    
+       return tabS
+    }
+    // Convert boolean values to strings 'Yes' or 'No'.
+    function boolConv(bool){
+        if(bool==true){ return "Yes"}
+        else if(bool==false){return "No"}
+    }
+    // Convert a Number to a String!
+    function numToS(num){
+        let s=num.toString()
+        return s
+    }
+    // Basic Mathematical Operations
+    function mathOper(a,b,op){
+        if(op=='+'){return a+b}
+        else if(op=='-'){return a-b}
+        else if(op=='*'){return a*b}
+        else if(op=='/'){return a/b}
+        }
+        
+        // Sum of the first nth term of Series
+    
+        function mathOper(ser,n)
+        {
+            let tabSr=ser.split("+")
+            let sum=0
+            var myArray = [];
+            for(var i = 0; i < n; i++){
+              myArray.push(tabSr[i]);
+           }
+            for(e of myArray){
+                if (e.includes("/")){
+                    let nmbres=e.split('/');
+                    let div=Number(nmbres[0])/Number(nmbres[1])
+                    sum+=div
+                }
+                else {
+                    sum+=Number(e)
+                }
+            }
+            // 2 decimal places :1,00,..
+            return sum.toFixed(2)
+           
+        }
+
+        // Keep Hydrated!
+        function hydrat(time){
+            let intTime=Math.floor(time)
+            let lit=intTime*0.5
+           return Math.floor(lit);
+        }
+
+        // Century From Year
+
+        function cent(y){
+    
+            let rest=y%100
+            //divide by 100 to get century
+            y= Math.floor(y / 100)
+            if(rest==0){
+                return y
+            }
+            else{
+                return y+1
+            }
+            
+           }
+            
+        //    Beginner - Lost Without a Map
+           function doublTab(tab){
+            for(let i=0;i<tab.length;i++){
+             tab[i]=2*tab[i]
+            } 
+            return tab
+         }
