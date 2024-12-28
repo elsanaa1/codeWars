@@ -720,7 +720,8 @@ function highLow(w){
 
         // Sum of Digits / Digital Root,Digital root is the recursive sum of all the digits in a number.
         function recSumdigits(num){
-             while(num.toString().length>1){
+            
+            while(num.toString().length>1){
                 num=sumdig(num)
             }
             return num
@@ -736,3 +737,61 @@ function highLow(w){
         }
 
     
+        // Who likes it?
+      
+        function wholike(arr){
+            if(arr.length==0){
+                return "no one likes this"
+            }
+        else if(arr.length==1){return arr[0]+" likes this" }
+        else if(arr.length==2){return arr[0]+ " and "+ arr[1] +" like this"}
+        else if(arr.length==3){
+                 return  arr[0]+ ","+ arr[1]+" and " +arr[2]+ " like this"}
+        else{
+            let arrname=[]
+            for(let i=0;i<arr.length-2;i++)
+            {
+                arrname.push(arr[i])
+            }
+            return arrname.join(", ")+' and 2 others like this'
+        }
+        }
+        
+
+
+        // Find The Parity Outlier:
+            // even array : exist o1 elemnt even between 2 odd elements , it can be in first or end or middle of array
+            // odd =1; even=0
+            function parityarr(arr){
+                let len=arr.length
+
+            for(let i=0;i<len;i++){
+                let a,a1,a2,a_1,a_2
+                a=typ(arr[i])
+                a1=typ(arr[i+1])
+                a2=typ(arr[i+2])
+                a_1=typ(arr[i-1])
+                a_2=typ(arr[i-2])
+                if( (a==1 && a1==0 && a2==0)||(a_1==0 && a==1 && a1==0)||( a_2==0 &&  a_1==0 && a==1 )){
+                return arr[i]+" the only odd number" 
+                    }
+
+                else if((a==0 && a1==1 && a2==1)||(a_1==1 && a==0 && a1==1)||( a_2==1 &&  a_1==1 && a==0 )){
+                    return arr[i]+" the only even number" 
+                }
+            }
+
+            function typ(num){
+                if(num!=null){
+                    if(num%2==0){
+                    return 0
+                    }
+                    else {
+                        return 1
+                    }
+                }
+                else num
+                
+            }
+            }
+        
