@@ -794,4 +794,29 @@ function highLow(w){
                 
             }
             }
-        
+
+
+            // Stop gninnipS My sdroW!
+
+            function stopgninnip(s){
+                let tab=s.split(" ")
+                let newtab=[]
+                for(e of tab){
+                     if(e.length>4){
+                          newtab.push(inversWord(e))   
+                     }
+                     else{
+                         newtab.push(e)
+                     }
+                     
+                }
+                
+                     //  Reverse Strings
+                        function inversWord(w){
+                            let tab=w.split("")
+                            let inv=tab.reverse().join("")
+                            return inv
+                         }
+                return newtab.join(" ")
+                }
+                
