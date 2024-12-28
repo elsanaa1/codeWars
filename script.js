@@ -1,5 +1,7 @@
+
 // """""""""""""""""""""""""""""Wharming Up"""""""""""""""""""""""""""""""""""
-// Return the number (count) of vowels in the given string.
+//Vowel count:
+//  Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
 
@@ -17,6 +19,7 @@ function countv(word){
 
 
 
+// Even or odd:
 // Create a function that takes
 // an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 // Solution:
@@ -30,6 +33,7 @@ if(num%2==0){
 
 }
 
+// Get the middle caracter:
 // You are going to be given a non-empty string. Your job is to return the middle character(s) of the string.
 // If the string's length is odd, return the middle character.
 // If the string's length is even, return the middle 2 characters.
@@ -66,7 +70,8 @@ function opposNum(num){
     }
 }
 
-// This time no story, no theory. The examples below show you how to write function accum:
+// Mumbling:
+//his time no story, no theory. The examples below show you how to write function accum:
 // accum("abcd") -> "A-Bb-Ccc-Dddd"
 // The parameter of accum is a string which includes only letters from a..z and A..Z.
 
