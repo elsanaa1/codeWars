@@ -1,3 +1,4 @@
+// """""""""""""""""""""""""""""Wharming Up"""""""""""""""""""""""""""""""""""
 // Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
@@ -687,4 +688,51 @@ function highLow(w){
                 return retExp.join("+")+"="+sum
             }
            
+
         }
+
+
+    //    """""""""""""""""""""""""""""""""""""""" #Changing Gears""""""""""""""""""""""""""""""""""""""""""""
+        // Multiples of 3 or 5
+
+        function sumMultip(n){
+            let mult3=0
+        let mult5=0
+        let sum=0
+        let i=1
+        while(mult3<n){
+            
+            mult3=3*i;
+            sum+=mult3
+             i++
+        }
+        i=1
+        while(mult5<n){
+            mult5=5*i;
+            sum+=mult5
+             i++
+        }
+        //when loop ends last element should be substracted because it's >10
+        return sum=sum-mult3-mult5
+        }
+        
+
+
+        // Sum of Digits / Digital Root,Digital root is the recursive sum of all the digits in a number.
+        function recSumdigits(num){
+             while(num.toString().length>1){
+                num=sumdig(num)
+            }
+            return num
+                
+                function sumdig(num){
+                        let sum = 0;
+                    while (num) {
+                        sum += num % 10;
+                        num = Math.floor(num / 10);
+                    }
+                    return sum
+                    }
+        }
+
+    
