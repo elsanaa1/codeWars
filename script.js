@@ -77,10 +77,8 @@ function accum(word){
         for(let j=1;j<=i;j++){
             if(j==1)
              {
-	     //	newtab.push(word[i-1].toUpperCase())
                 newWord+=word[i-1].toUpperCase()
              }else{
-	     //	newtab.push(word[i-1])
               newWord+=word[i-1]
               }
        }
@@ -298,7 +296,7 @@ function highLow(w){
             }
             else
              { return -1}
-                
+
             }
 
 
@@ -309,21 +307,21 @@ function highLow(w){
                  let newNum=[];
                 for ( let i= tab.length-1 ;i>=0;i--){
                     if (i==tab.length-1 || i==tab.length-2||i==tab.length-3||i==tab.length-4){
-                    
+
                        newNum.unshift(tab[i])
                     }
                     else{
                           newNum.unshift("#")
-                       
+
                     }
                 }
                     return newNum.join("")
                 }
 
-                
+
                 // Find the divisors!
                 function divisors(n){
-    
+
                     let tabRes = [];
                      for(let i = 2; i < n; i++) {
                         if( n % i == 0) {
@@ -331,9 +329,9 @@ function highLow(w){
                          }
                      }
                      if(tabRes.length==0){ return n+" is prime";}
-                     else{  
+                     else{
                         tabRes.sort((a, b) => a - b);
-                        return tabRes 
+                        return tabRes
                        }
                     }
     //    """"""""""""""""""""""""" Data types """"""""""""""""""""""
@@ -366,7 +364,7 @@ function highLow(w){
             if(s[i]==" "){}
             else{tabS+=s[i] }
         }
-    
+
        return tabS
     }
     // Convert boolean values to strings 'Yes' or 'No'.
@@ -386,9 +384,9 @@ function highLow(w){
         else if(op=='*'){return a*b}
         else if(op=='/'){return a/b}
         }
-        
+
         // Sum of the first nth term of Series
-    
+
         function mathOper(ser,n)
         {
             let tabSr=ser.split("+")
@@ -409,7 +407,7 @@ function highLow(w){
             }
             // 2 decimal places :1,00,..
             return sum.toFixed(2)
-           
+
         }
 
         // Keep Hydrated!
@@ -422,7 +420,7 @@ function highLow(w){
         // Century From Year
 
         function cent(y){
-    
+
             let rest=y%100
             //divide by 100 to get century
             y= Math.floor(y / 100)
@@ -432,14 +430,14 @@ function highLow(w){
             else{
                 return y+1
             }
-            
+
            }
-            
+
         //    Beginner - Lost Without a Map
            function doublTab(tab){
             for(let i=0;i<tab.length;i++){
              tab[i]=2*tab[i]
-            } 
+            }
             return tab
          }
 
@@ -463,7 +461,7 @@ function highLow(w){
         let lastLett=tab[1][0]
         return firstLett.toUpperCase()+"."+lastLett.toUpperCase()
         }
-        
+
         // DNA to RNA Conversion
         function dnaTorna(dna){
             let rna=dna.replace(/T/g,"U");
@@ -495,7 +493,7 @@ function highLow(w){
            return "found the needle at position "+ (i+1)
         }
     }
-      
+
     }
     // Remove the minimum
 
@@ -505,13 +503,13 @@ function highLow(w){
         arr.splice(indx,1)
         return arr
     }
-    
+
     // Convert number to reversed array of digits
     function convrtNbr(nbr){
         let arr=String(nbr).split("")
         return arr
     }
-    // Make a function that does arithmetic!    
+    // Make a function that does arithmetic!
     function mathOper(a,b,op){
         if(op== "add" ){return a+b}
         else if(op=="subtract"){return a-b}
@@ -520,13 +518,13 @@ function highLow(w){
         }
 
 
-        
+
         // Regular Ball Super Ball
 
         class Ball{
-     
+
             constructor( type="regular"){
-                 this.ballType=type 
+                 this.ballType=type
             }
         }
 
@@ -539,7 +537,7 @@ function highLow(w){
                this.sex   = sex;
                this.age   = age;
             }
-            
+
             bark(){
                 return 'Woof!'
             }
@@ -560,7 +558,7 @@ function highLow(w){
             let gre="Hello "+name
             return gre
         }
-        
+
         // Function 1 - hello world
         function greet(){
             let greet="hello World"
@@ -574,4 +572,119 @@ function highLow(w){
             }
             return tabNum
         }
+        // Are You Playing Banjo?
+        function nameplay(name){
+            if(name[0].toLowerCase()=='r'){
+                return name + " plays banjo"
+            }
+            else {return name + " does not play banjo"}
+        }
+
+
+        // """""""""""""""""""""Control Flow""""""""""""""""""""""""""
+        // Find the capitals
+
+        function isUpper(word){
+            let tabindices=[]
+             for(let i=0;i<=word.length-1;i++){
+                 if(word[i]==word[i].toUpperCase()){
+                     tabindices.push(i)
+                 }
+             }
+             return tabindices
+        }
+
+        // Plural
+        function plural(nbr){
+            if(nbr==1){return false}
+            else{ return true}
+        }
+        // Drink about
+
+        function drink(age){
+            let drink;
+            if(age<14){drink="toddy"}
+            else if (age<18){drink="coke"}
+            else if(age<21){drink="beer"}
+             else if(age>=21){drink="whisky"}
+
+             return "drink "+drink
+        }
+        // Leonardo Dicaprio and Oscars
+        function leo(oscar) {
+            if(oscar==88){return "Leo finally won the oscar! Leo is happy"}
+            else if(oscar==86){return "Not even for Wolf of wallstreet?!"}
+            else if(oscar<88){return "When will you give Leo an Oscar?"}
+            else if(oscar>88){return "Leo got one already!"}
+            
+        }
+
+// """"""""""""""""""""""""""""Loops"""""""""""""""""""""""""""""""""""
+
+        // Sentence Smash
+
+        function smash(arrword){
+            let word=arrword.join(" ")
+            return word
+        }
+        // If you can't sleep, just count sheep!!
+
+        function countSh(n){
+            let counts=""
+            for(let i=1;i<=n;i++){
+                counts+=i+" sheep..."
+            }
+        return counts
+        }
+
+
+        // Double Char:
+        function doubleChar(word){
+            let newWord="";
+            let resultTab=[];//table of mumbling words
+           for(let i=1;i<=word.length;i++){
+                // repeat i times every caracter
+                for(let j=1;j<=2;j++){
+                    
+                        newWord+=word[i-1]
+               }
+               resultTab.push(newWord)
+               newWord=""
         
+            }
+        
+             let resultWord=resultTab.join("")
+             return resultWord
+        
+        }
+
+
+        // Unfinished Loop - Bug Fixing #1
+        // code:
+        // let n=10;
+        // for (let i =0; i<n; i--)
+        //     console.log("hello");
+        //solution :
+        let n=10;
+         for (let i =0; i<n; i++)
+         console.log("hello");
+
+        //  Sum of numbers from 0 to N
+         function sumSeries(n){
+            if(Math.sign(n)==-1){
+               return n+"<0"
+           }
+           else if(Math.sign(n)==0)
+               {return n+"=0"}
+           else 
+            {
+                let sum=0
+                let retExp=[]
+                for(let i=0;i<=n;i++){
+                    sum+=i
+                    retExp.push(i)
+                }
+                return retExp.join("+")+"="+sum
+            }
+           
+        }
