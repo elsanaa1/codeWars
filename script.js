@@ -606,6 +606,17 @@ function highLow(w){
          console.log(switchcas(0));
 
 
+
+
+        //  FIXME: Get Full Name
+
+        function returnFull(first,last){
+            let pers={}
+            pers.first=first
+            pers.last=last
+            return "full name: " +pers.first +" "+ pers.last
+        }
+
       //"""""""""""""""""""""" Basic Language Features"""""""""""""""""
     //   Grasshopper - Summation
 
