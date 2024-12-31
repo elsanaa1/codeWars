@@ -602,7 +602,7 @@ function highLow(w){
             return value 
             }
         console.log(switchcas("0"));
-        // solution: comparison === type check 
+        // solution: switch use comparison '===' type check 
          console.log(switchcas(0));
 
 
