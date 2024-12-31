@@ -892,4 +892,87 @@ function highLow(w){
                          }
                 return newtab.join(" ")
                 }
-                
+    
+
+
+      // """"""""""""""""""""""""""""""""""""""Fire At Will """""""""""""""""""""""""""
+                // Problem1: Find out whether the shape is a cube
+                // To find the volume (centimeters cubed) of a cuboid you use the formula:
+                // volume = Length * Width * Height
+                // But someone forgot to use proper record keeping, so we only have the volume, and the length of a single side!
+                // It's up to you to find out whether the cuboid has equal sides (= is a cube).       
+                // Return true if the cuboid could have equal sides, return false otherwise.
+                // Return false for invalid numbers too (e.g volume or side is less than or equal to 0).
+                // Note: side will be an integer   
+
+                function isCuboid(volume,length){
+                    // check if invalid entries
+                    if(volume<=0 || length<=0){
+                        return false 
+                    }
+                    // check if cuboid could have equal sides
+                    else if(Math.pow(length,3)==volume){
+                         return true 
+                    }else{
+                         return false 
+                    }
+                }
+
+
+        //  Problem 2: Numbers with The Highest Amount of Divisors::
+        // An array of different positive integers is given. We should create a code that gives us the number 
+        // (or the numbers) that has (or have) the highest number of divisors among other data.
+
+        function proc_arrInt(arr){
+
+            let len=arr.length;
+            let returnArray=[len]
+            
+            let listRetuHighest=[];
+            let totalPrim=0;
+        let highestDivArr=[]
+        //calcul of number divisors of array elements  
+        for(let i=0;i<arr.length;i++){
+                highestDivArr.push(nmbrdivisors(arr[i]))
+                if(isPrime(arr[i]) ==true){
+                    totalPrim++
+                }
+        }
+        // insert total of prime numbers 
+        returnArray.push(totalPrim)
+        //get highest amount of divisors that a certain number 
+        let maxtotalDiv=Math.max(...highestDivArr);
+        listRetuHighest.push(maxtotalDiv);
+        // get elements in array that has maxtotalDiv 
+        let arrMaxdiv=[]
+            for(let i=0;i<highestDivArr.length;i++){
+                if(highestDivArr[i]==maxtotalDiv) {arrMaxdiv.push(arr[i])}
+            }
+              //sort list 
+        arrMaxdiv.sort(function(a,b){return a-b})
+        listRetuHighest.push(arrMaxdiv);
+
+        //insert list to return variable
+        returnArray.push(listRetuHighest)
+        return returnArray;
+        
+        
+        
+        //function to get numbre of divisors 
+            function nmbrdivisors(n){
+            let countDiv=0
+            for(let i=1;i<=n;i++){
+                if(n%i==0){
+                    countDiv++
+                }
+            }
+            return countDiv
+                }
+        //function to check prime numbre 
+        function isPrime(n){
+            for(let i=2;i<n;i++){
+                if(n % i === 0) return false;
+            }
+            return true
+        }
+        }
