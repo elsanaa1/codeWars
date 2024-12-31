@@ -584,6 +584,28 @@ function highLow(w){
                 return arr
                 }
 
+
+// Switch/Case - Bug Fixing #6
+       function switchcas(x){
+            let value
+            switch (x) {
+            case 0:
+                value = "Off";
+                break;
+            case 1:
+                value = "On";
+                break;
+            default:
+                value = "you need x to be same type with switch values";
+                break;
+            }
+            return value 
+            }
+        console.log(switchcas("0"));
+        // solution: comparison === type check 
+         console.log(switchcas(0));
+
+
       //"""""""""""""""""""""" Basic Language Features"""""""""""""""""
     //   Grasshopper - Summation
 
