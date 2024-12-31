@@ -325,6 +325,21 @@ function highLow(w){
                 }
 
 
+                
+                // Sum of odd numbers
+                function sumOddTrian(n){
+    
+                        let firstN=n*(n-1)+1
+                        let sum=firstN
+                        // rest n-1 numbre
+                        let newNbre=firstN;
+                        for(let i=2;i<=n;i++){
+                        newNbre=newNbre+2
+                        sum+=newNbre
+                        }
+                        return sum
+                    }
+
                 // Find the divisors!
                 function divisors(n){
 
@@ -383,6 +398,8 @@ function highLow(w){
         let s=num.toString()
         return s
     }
+
+    // """""""""""""""""""""""""""""""""NUmbers"""""""""""""""""""""
     // Basic Mathematical Operations
     function mathOper(a,b,op){
         if(op=='+'){return a+b}
@@ -446,7 +463,7 @@ function highLow(w){
             }
             return tab
          }
-
+        //  """""""""""""""""""""""""""""Strings"""""""""""""""""""""""""""""""""""""
         //  Reversed Strings
         function inversWord(w){
             let tab=w.split("")
@@ -515,6 +532,7 @@ function highLow(w){
         let arr=String(nbr).split("")
         return arr
     }
+        // """"""""""""""""""""""""""""""""Objects"""""""""""""""""""""""""""""""""
     // Make a function that does arithmetic!
     function mathOper(a,b,op){
         if(op== "add" ){return a+b}
@@ -525,7 +543,7 @@ function highLow(w){
 
 
 
-        // Regular Ball Super Ball
+        // Regular Ball Super Ball:
 
         class Ball{
 
