@@ -574,6 +574,16 @@ function highLow(w){
             }
         }
 
+
+
+        // Add property to every object in array
+        function addProp(arr){
+                for(let e of arr){
+                    e.usersAnswer=null
+                }
+                return arr
+                }
+
       //"""""""""""""""""""""" Basic Language Features"""""""""""""""""
     //   Grasshopper - Summation
 
