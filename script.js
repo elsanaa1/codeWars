@@ -325,7 +325,7 @@ function highLow(w){
                 }
 
 
-                
+
                 // Sum of odd numbers
                 function sumOddTrian(n){
     
@@ -476,6 +476,13 @@ function highLow(w){
             let boolexist=word.includes(end,word.length-end.length)
             return boolexist
         }
+
+
+        // Do I get a bonus?
+        function getBonus(salary,bonus){
+                if(bonus){ return salary*10+"£"}
+                else{ return salary+"£"}
+                }
 
         // Abbreviate a Two Word Name
         function abbrev(name){
