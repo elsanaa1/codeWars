@@ -969,10 +969,27 @@ function highLow(w){
             return countDiv
                 }
         //function to check prime numbre 
-        function isPrime(n){
-            for(let i=2;i<n;i++){
-                if(n % i === 0) return false;
+            function isPrime(n){
+                for(let i=2;i<n;i++){
+                    if(n % i === 0) return false;
+                }
+                return true
             }
-            return true
         }
-        }
+    
+
+        // Last digit of a huge number
+//   For a given list [x1, x2, x3, ..., xn] compute the last (decimal) digit of x1 ^ (x2 ^ (x3 ^ (... ^ xn))).
+// E. g., with the input [3, 4, 2], your code should return 1 because 3 ^ (4 ^ 2) = 3 ^ 16 = 43046721.
+// Beware: powers grow incredibly fast. For example, 9 ^ (9 ^ 9) has more than 369 millions of digits. lastDigit has to deal with such numbers efficiently.
+// Corner cases: we assume that 0 ^ 0 = 1 and that lastDigit of an empty list equals to 1.
+function lastdigit(arrNum) {
+    let len=arrNum.length
+    let resul=1// in case of empty list return 1(0pow(0)=1)
+    for(let i=len-1;i>=0;i--){
+        resul=Math.pow(arrNum[i],resul)
+    }
+    let s=resul.toString();
+    let lastdigit=s[s.length-1];
+    return lastdigit
+}
