@@ -978,7 +978,7 @@ function highLow(w){
         }
     
 
-        // Last digit of a huge number
+        // Last digit of a huge number:
 //   For a given list [x1, x2, x3, ..., xn] compute the last (decimal) digit of x1 ^ (x2 ^ (x3 ^ (... ^ xn))).
 // E. g., with the input [3, 4, 2], your code should return 1 because 3 ^ (4 ^ 2) = 3 ^ 16 = 43046721.
 // Beware: powers grow incredibly fast. For example, 9 ^ (9 ^ 9) has more than 369 millions of digits. lastDigit has to deal with such numbers efficiently.
@@ -986,6 +986,7 @@ function highLow(w){
 function lastdigit(arrNum) {
     let len=arrNum.length
     let resul=1// in case of empty list return 1(0pow(0)=1)
+    //start from array's end to calculate the power 
     for(let i=len-1;i>=0;i--){
         resul=Math.pow(arrNum[i],resul)
     }
@@ -993,3 +994,18 @@ function lastdigit(arrNum) {
     let lastdigit=s[s.length-1];
     return lastdigit
 }
+
+
+// The soul of wit: reverse an array
+// No time for stories. Reverse an array, return the result. Do whatever you want with the original array.
+//  Don't use Array.prototype.reverse.
+function reversArr(arr){    
+    let len=arr.length
+    let revArr=[]
+    for(let i=len-1;i>=0;i--){
+          revArr.push(arr[i])
+       }
+   return revArr
+   
+   } 
+    
