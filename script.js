@@ -1019,3 +1019,20 @@ function reversArr(arr){
 // 5: maxPn(n) with parameter n: returns the biggest prime number of the above p(n) # (tested)
 // 6: anOver(n) with parameter n: returns an array (n terms) of the a(i)/i for every i such g(i) != 1 (not tested but interesting result)
 // 7: anOverAverage(n) with parameter n: returns as an *integer* the average of anOver(n) # (tested)
+// Solution:
+function an(n){
+    let an=[7]
+    for(let i=1;i<n;i++){
+        // a(n) = a(n-1) + gcd(n, a(n-1)) for "n >= 2"
+        let e=an[i-1]+gcd(i+1,an[i-1])
+        an.push(e)
+    }
+    return an
+    //calcul gcd
+    function gcd(a, b) {
+      if (!b) {
+        return a;
+      }
+      return gcd(b, a % b);
+    }
+}
