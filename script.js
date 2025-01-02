@@ -1036,3 +1036,14 @@ function an(n){
       return gcd(b, a % b);
     }
 }
+// gn function
+function gn(n){
+    let anArr=[]
+    anArr=an(n);
+    let gn=[1];// first element is 1
+    for(let i=0;i<n-1;i++){
+        let e=anArr[i+1]-anArr[i]
+        gn.push(e)
+    }
+    return gn;
+}
