@@ -919,7 +919,7 @@ function highLow(w){
                 }
 
 
-        //  Problem 2: Numbers with The Highest Amount of Divisors::
+         //  Problem 2: Numbers with The Highest Amount of Divisors::
         // An array of different positive integers is given. We should create a code that gives us the number 
         // (or the numbers) that has (or have) the highest number of divisors among other data.
 
@@ -956,9 +956,7 @@ function highLow(w){
         returnArray.push(listRetuHighest)
         return returnArray;
         
-        
-        
-        //function to get numbre of divisors 
+        //function to get number of divisors 
             function nmbrdivisors(n){
             let countDiv=0
             for(let i=1;i<=n;i++){
@@ -968,7 +966,7 @@ function highLow(w){
             }
             return countDiv
                 }
-        //function to check prime numbre 
+        //function to check prime number
             function isPrime(n){
                 for(let i=2;i<n;i++){
                     if(n % i === 0) return false;
@@ -978,7 +976,7 @@ function highLow(w){
         }
     
 
-        // Last digit of a huge number:
+       //  Problem 3: Last digit of a huge number:
 //   For a given list [x1, x2, x3, ..., xn] compute the last (decimal) digit of x1 ^ (x2 ^ (x3 ^ (... ^ xn))).
 // E. g., with the input [3, 4, 2], your code should return 1 because 3 ^ (4 ^ 2) = 3 ^ 16 = 43046721.
 // Beware: powers grow incredibly fast. For example, 9 ^ (9 ^ 9) has more than 369 millions of digits. lastDigit has to deal with such numbers efficiently.
@@ -996,16 +994,28 @@ function lastdigit(arrNum) {
 }
 
 
-// The soul of wit: reverse an array
+
+    // Problem 4: The soul of wit: reverse an array
 // No time for stories. Reverse an array, return the result. Do whatever you want with the original array.
-//  Don't use Array.prototype.reverse.
+// Don't use Array.prototype.reverse.
 function reversArr(arr){    
     let len=arr.length
     let revArr=[]
     for(let i=len-1;i>=0;i--){
           revArr.push(arr[i])
        }
-   return revArr
+    return revArr
    
    } 
     
+
+   // problem 5:
+//    Write functions:
+// 1: an(n) with parameter n: returns the first n terms of the series of a(n) (not tested)
+// 2: gn(n) with parameter n: returns the first n terms of the series of g(n) (not tested)
+// 3: countOnes(n) with parameter n: returns the number of 1 in the series gn(n) 
+//     (don't forget to add a `1` at the head) # (tested)
+// 4:  p(n) with parameter n: returns an array filled with the n first distinct primes in the same order they are found in the sequence gn (not tested)
+// 5: maxPn(n) with parameter n: returns the biggest prime number of the above p(n) # (tested)
+// 6: anOver(n) with parameter n: returns an array (n terms) of the a(i)/i for every i such g(i) != 1 (not tested but interesting result)
+// 7: anOverAverage(n) with parameter n: returns as an *integer* the average of anOver(n) # (tested)
