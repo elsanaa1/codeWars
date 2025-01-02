@@ -896,7 +896,7 @@ function highLow(w){
 
 
       // """"""""""""""""""""""""""""""""""""""Fire At Will """""""""""""""""""""""""""
-                // Problem1: Find out whether the shape is a cube
+                // Problem1: Find out whether the shape is a cube:https://www.codewars.com/kata/58d248c7012397a81800005c
                 // To find the volume (centimeters cubed) of a cuboid you use the formula:
                 // volume = Length * Width * Height
                 // But someone forgot to use proper record keeping, so we only have the volume, and the length of a single side!
@@ -919,7 +919,7 @@ function highLow(w){
                 }
 
 
-         //  Problem 2: Numbers with The Highest Amount of Divisors::
+         //  Problem 2: Numbers with The Highest Amount of Divisors::https://www.codewars.com/kata/55ef57064cb8418a3f000061
         // An array of different positive integers is given. We should create a code that gives us the number 
         // (or the numbers) that has (or have) the highest number of divisors among other data.
 
@@ -976,7 +976,7 @@ function highLow(w){
         }
     
 
-       //  Problem 3: Last digit of a huge number:
+       //  Problem 3: Last digit of a huge number:https://www.codewars.com/kata/5518a860a73e708c0a000027
 //   For a given list [x1, x2, x3, ..., xn] compute the last (decimal) digit of x1 ^ (x2 ^ (x3 ^ (... ^ xn))).
 // E. g., with the input [3, 4, 2], your code should return 1 because 3 ^ (4 ^ 2) = 3 ^ 16 = 43046721.
 // Beware: powers grow incredibly fast. For example, 9 ^ (9 ^ 9) has more than 369 millions of digits. lastDigit has to deal with such numbers efficiently.
@@ -995,7 +995,7 @@ function lastdigit(arrNum) {
 
 
 
-    // Problem 4: The soul of wit: reverse an array
+    // Problem 4: The soul of wit: reverse an array:https://www.codewars.com/kata/59b81886460387d8fc000043
 // No time for stories. Reverse an array, return the result. Do whatever you want with the original array.
 // Don't use Array.prototype.reverse.
 function reversArr(arr){    
@@ -1009,7 +1009,7 @@ function reversArr(arr){
    } 
     
 
-   // problem 5:
+   // problem 5:Weird prime generator:https://www.codewars.com/kata/562b384167350ac93b00010c
 //    Write functions:
 // 1: an(n) with parameter n: returns the first n terms of the series of a(n) (not tested)
 // 2: gn(n) with parameter n: returns the first n terms of the series of g(n) (not tested)
@@ -1046,4 +1046,54 @@ function gn(n){
         gn.push(e)
     }
     return gn;
+}
+
+function  countOnes(n){
+    let count=0
+    let gArr=gn(n)
+     for(let i=0;i<n;i++){
+        if(gArr[i]==1){
+            count++
+        }
+     }
+    return count;
+}
+
+function  p(n){
+    let retArr=[]
+    let gnArr=gn(n)
+    for(let i=0;i<n;i++){
+        if(gnArr[i]!=1){
+            retArr.push(gnArr[i])
+        }
+     }
+    return retArr;
+}
+
+
+
+function maxPn(n){
+    let pnArr=p(n)
+    return Math.max(...pnArr)
+}
+
+function anOver(n){
+    let aArr=an(n)
+    let retArr=[]
+    for(let i=0;i<n;i++){
+         let e=Math.floor(aArr[i]/(i+1))
+         retArr.push(e)
+    }
+    return retArr
+}
+
+function anOverAverage(n){
+    let sum=0
+    let arr=anOver(n)
+    let len =arr.length
+     for(let i=0;i<n;i++){
+         sum+=arr[i]
+    }
+    return Math.floor(sum/len)
+    
 }
