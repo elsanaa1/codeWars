@@ -95,123 +95,86 @@ function highAndLow(numbers){
     // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive.
     //  The string can contain any char.
     //  Examples input/output: XO("ooxx") => true
-    function exesOhs(w){
-        let countX=0;
-        let countO=0;
-        for ( let i=0;i<=w.length-1;i++){
-
-            if(w[i]=='o' || w[i] == 'O') {countO++}
-            if( w[i]=='x' ||w[i]=='X') {countX++}
-        }
-        if(countX == countO ){ return true}
-        else{ return false }
-        }
-
+         function XO(str) {
+        let tab=str.split("");
+        let countO=tab.filter((e)=>e=='o' || e == 'O').length
+        let countX=tab.filter((e)=>e=='x' || e == 'X').length
+         return (countX==countO)
+         }
+        
         // Square Every Digit:
-        function squarDigits(word){
-            let tab=word.split("")
-            let tabRes=[]
-            for(let e of tab){
-                tabRes.push(Number(e)*Number(e));
-            }
-            let resWord=tabRes.join("")
-            return resWord
-        }
+        function squareDigits(num){
+            return  Number(String(num).split('').map((e)=>Number(e)*Number(e)).join(""));
+           }
 
+           
         // Shortest Word  :
         // Simple, given a string of words, return the length of the shortest word(s).
-        function shortestW(s){
-            let tabWords=s.split(" ")
-            let tabLengths=[]
-            for(e of tabWords ){
-                tabLengths.push(e.length);
+        function findShort(s){
+            let tabLengths= s.split(" ").map((e)=>e.length)
+            return Math.min(...tabLengths)
             }
-            let  minLenght=Math.min(...tabLengths)
-            return minLenght
-        }
 
         // Complementary DNA:
         // Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the
         // "instructions" for the development and functioning of living organisms."ATTGC" --> "TAACG"
-        function compDNA(w){
+        function dnaStrand(dna){
             let complW=""
-            for (let i=0;i<=w.length;i++){
-                if(w[i]=='A'){complW+='T'}
-                else if(w[i]=='T'){complW+='A'}
-                else if(w[i]=='C'){complW+='G'}
-                else if(w[i]=='G'){complW+='C'}
+            for (let i=0;i<=dna.length;i++){
+                if(dna[i]=='A'){complW+='T'}
+                else if(dna[i]=='T'){complW+='A'}
+                else if(dna[i]=='C'){complW+='G'}
+                else if(dna[i]=='G'){complW+='C'}
             }
             return complW;
-        }
+                 }
+
         // Descending Order:
         // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order.
         // Essentially, rearrange the digits to create the highest possible number.
-        function descendOrder(w){
-            let tab = w.toString().split("")
-            tab.sort(function(a,b){return b-a })
-            let res=tab.join("")
-            return res;
-                    }
+        function descendingOrder(n){
+            return  Number(n.toString().split("").sort(function(a,b){return b-a }).join(""));
+            }
 
         // Sum of positive :
         // You get an array of numbers, return the sum of all of the positives ones.
-        function sumPosit(arrNum){
-           let sum=0
-                 for(e of arrNum){
-                            if (Math.sign(e)==1){
-                                sum+=e;
-                            }
-                 }
-             return sum;
-        }
+        function positiveSum(arr) {
+            return arr.filter((e)=>Math.sign(e)==1).reduce((acc,init)=>acc+init,0);
+       }
         //Isograms :
 
         // An isogram is a word that has no repeating letters, consecutive or non-consecutive.
         // Implement a function that determines whether a string that contains only letters is an isogram.
         // Assume the empty string is an isogram. Ignore letter case.
-        function isogrF(w){
-            let sortedtab=w.split('')
-            for(let i=0;i<=sortedtab.length-1;i++){
-            sortedtab[i]=sortedtab[i].toLowerCase()
-            }
-        sortedtab.sort()
-            console.log(sortedtab)
-            for(let i=0;i<=sortedtab.length-1;i++){
-            if(sortedtab[i]==sortedtab[i-1] ||sortedtab[i]==sortedtab[i+1]){
-                    return false
-                }
-            }
-            return true
-        }
+         function isIsogram(str){
+            let sortedtab= str.split('').map((e)=>e.toLowerCase()).sort()
+             for(let i=0;i<=sortedtab.length-1;i++){
+                  if(sortedtab[i]==sortedtab[i-1] ||sortedtab[i]==sortedtab[i+1]){
+                         return false
+                     }
+             }
+             return true
+         
+ }
 
         // List Filtering:
         // In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
-        function listFilter(lis){
-            let intList=[]
-            for(e of lis){
-                if(Number.isInteger(e)){
-                    intList.push(e)
-                }
-            }
-            return intList
-        }
+        function filter_list(l) {
+            return l.filter((e)=>Number.isInteger(e))
+          }
 
         //Find the smallest integer in the array
-        function smallestInt(lis){
-            let min=Math.min(...lis)
-            return min;
-        }
-
+        function findSmallestInt(arr) {
+            return Math.min(...arr);
+           }
         // Sum of two lowest positive integers
         // Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers.
         //  No floats or non-positive integers will be passed.
-        function sumTwoLowest(arr){
-            let min=Math.min(...arr)
-            let indx=arr.indexOf(min)
-            arr.splice(indx,1)
-           let min2=Math.min(...arr)
-           return min+min2
-        }
+        function sumTwoSmallestNumbers(numbers) {  
+            let min=Math.min(...numbers)
+              numbers.splice(numbers.indexOf(min),1)
+             return min+Math.min(...numbers)
+  }
         // Growth of a Population:
         // p0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)
         // the function nb_year should return n number of entire years needed to get a population greater or equal to p.
@@ -232,15 +195,11 @@ function highAndLow(numbers){
         }
         // String repeat,
         // Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
-        function repeatS(s,n){
-            let i=1
-            let sum=""
-         while(i<=n){
-            sum=s+sum
-            i++
-        }
-         return sum
-        }
+        function repeatStr (n, s) {
+            return  s.repeat(n);
+          }
+
+          
         // """"""""""""""""""""""Algorithms""""""""""""""""""""""""""""""""
         // Is this a triangle?
         function isTriangle(a,b,c){
