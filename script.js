@@ -9,7 +9,7 @@
 function getCount(str) {
     
     let tabv =str.split("").filter(
-        (c)=> c=='a' | | c=='e' || c=='i' || c=='o' || c=='u')
+        (c)=> c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
         
    return tabv.length;
  
@@ -47,17 +47,9 @@ function getMiddle(s) {
 //  find its opposite (additive inverse).
 // Solution:
 
-function opposNum(num){
-    let sign=Math.sign(Number(num))
-    if(sign==0)
-    {
-         return num;
-    }else if(sign==1){
-        return "-"+num;
-    }
-    else{
-        return Math.abs(Number(num));
-    }
+function opposite(number) {
+    let sign=Math.sign(Number(number))
+    return (sign==0) ? (number) : ( (sign==1) ? (Number("-"+number)) : Math.abs(Number(number)) );
 }
 
 // Mumbling:
@@ -65,40 +57,18 @@ function opposNum(num){
 // accum("abcd") -> "A-Bb-Ccc-Dddd"
 // The parameter of accum is a string which includes only letters from a..z and A..Z.
 
-function accum(word){
-    let newWord="";
-    let resultTab=[];//table of mumbling words
-   for(let i=1;i<=word.length;i++){
-        // repeat i times every caracter
-        for(let j=1;j<=i;j++){
-            if(j==1)
-             {
-                newWord+=word[i-1].toUpperCase()
-             }else{
-              newWord+=word[i-1]
-              }
-       }
-       resultTab.push(newWord)
-       newWord=""
-
+function accum(s) {
+    let tab=s.toLowerCase().split("")
+    let t=tab.map((e,index)=> e.repeat(index+1)).map((e)=>e.replace(e[0],e[0].toUpperCase()))
+    return t.join('-')
     }
-
-     let resultWord=resultTab.join("-")
-     return resultWord
-
-}
 
 //You're a square!:
 // Given an integral number, determine if it's a square number:
 function isSquare(num){
-
-let sq=Math.sqrt(Number(num));
-if(Number.isInteger(sq)){
-    return true
- }else{
-     return false
- }
-}
+    return Number.isInteger(Math.sqrt(Number(num))) ;
+    
+   }
 
 
 // Disemvowel Trolls:
