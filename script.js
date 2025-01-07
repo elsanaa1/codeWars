@@ -6,15 +6,13 @@
 // The input string will only consist of lower case letters and/or spaces.
 
 // Solution:
-function countv(word){
-    let tab=word.split("")
-    let count=0
-    for( let c of tab){
-      if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
-        { count++;}
-    }
-   return count;
-
+function getCount(str) {
+    
+    let tabv =str.split("").filter(
+        (c)=> c=='a' | | c=='e' || c=='i' || c=='o' || c=='u')
+        
+   return tabv.length;
+ 
 }
 
 
@@ -38,17 +36,9 @@ if(num%2==0){
 // If the string's length is odd, return the middle character.
 // If the string's length is even, return the middle 2 characters.
 // Solution:
-function middchar(word){
-    let len=word.length;
-    let div=len/2;
-    if(Number.isInteger(div)){
-        let midd=word[Math.trunc(div)-1]
-        let midd2=word[Math.trunc(div)]
-        return midd+","+midd2
-    }else{
-            let midd=word[Math.trunc(div)]
-             return midd
-    }
+function getMiddle(s) {
+   let div=s.length/2;
+    return (Number.isInteger(div)) ? (s[Math.trunc(div)-1]+s[Math.trunc(div)]) : s[Math.trunc(div)];
 }
 
 
