@@ -182,12 +182,12 @@ function highAndLow(numbers){
         // Examples:
         // nb_year(1500, 5, 100, 5000) -> 15
 
-        function nb_year(p0, percent, aug,p){
+        function nbYear(p0, percent, aug, p) {
             let nbr_p=p0;
             percent=percent/100;
             let nb_y=0
             while(nbr_p<p){
-                nbr_p=nbr_p+ nbr_p *percent+ aug
+                nbr_p=Math.floor(nbr_p+ nbr_p *percent+ aug);
                 nb_y++;
             }
             return nb_y;
@@ -202,10 +202,11 @@ function highAndLow(numbers){
           
         // """"""""""""""""""""""Algorithms""""""""""""""""""""""""""""""""
         // Is this a triangle?
-        function isTriangle(a,b,c){
-            if(a+b>c &&b+c>a&& a+c>b){return true}
-            return false
-        }
+       function isTriangle(a,b,c)
+            {
+        return (a+b>c && b+c>a && a+c>b)      
+            }
+
         // Find the next perfect square!
         function findNextSquare(num){
             if (Number.isInteger(Math.sqrt(num))){
