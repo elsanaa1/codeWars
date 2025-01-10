@@ -246,42 +246,32 @@ function highAndLow(numbers){
                 }
     //    """"""""""""""""""""""""" Data types """"""""""""""""""""""
     // Return Negative:
-    function returNegativ(num){
-        let sign=Math.sign(Number(num))
-        if(sign==0)
-        {
-             return num;
-        }else if(sign==1){
-            return "-"+num;
-        }
-        else{
-            return Math.abs(Number(num));
-        }
-    }
+    function makeNegative(num) {
+        return (num==0)? num:(Math.sign(num)==-1)? num: -num
+        
+      }
 
     // Remove First and Last Character:
     function removFirstLast(s){
-        let tabS=s.split("")
-        tabS.splice(tabS.length-1,1);
-        tabS.splice(0,1);
-       return tabS.join("")
+        let tabS=str.split("")
+        tabS.splice(tabS.length-1,1)
+        tabS.splice(0,1)
+         return tabS.join("");
+         // return str.slice(1, -1);
+       
     }
     // Remove String Spaces
     // Write a function that removes the spaces from the string, then return the resultant string.
     function removWhiteSpace(s){
-        let tabS=""
-        for(let i=0;i<=s.length-1;i++){
-            if(s[i]==" "){}
-            else{tabS+=s[i] }
-        }
+        return  s.split(' ').join('')
+     }
 
-       return tabS
-    }
     // Convert boolean values to strings 'Yes' or 'No'.
     function boolConv(bool){
         if(bool==true){ return "Yes"}
         else if(bool==false){return "No"}
     }
+    
     // Convert a Number to a String!
     function numToS(num){
         let s=num.toString()
