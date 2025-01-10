@@ -267,28 +267,28 @@ function highAndLow(numbers){
      }
 
     // Convert boolean values to strings 'Yes' or 'No'.
-    function boolConv(bool){
-        if(bool==true){ return "Yes"}
-        else if(bool==false){return "No"}
-    }
-    
+    function boolToWord( bool ){
+        return (bool)? "Yes":"No"
+       }
+   
+
     // Convert a Number to a String!
-    function numToS(num){
-        let s=num.toString()
-        return s
-    }
+    function numberToString(num) {
+             return num.toString()
+        }
 
     // """""""""""""""""""""""""""""""""NUmbers"""""""""""""""""""""
     // Basic Mathematical Operations
-    function mathOper(a,b,op){
-        if(op=='+'){return a+b}
-        else if(op=='-'){return a-b}
-        else if(op=='*'){return a*b}
-        else if(op=='/'){return a/b}
-        }
+    function basicOp(operation, value1, value2){
+    return operation=='+'? value1+value2 :
+        operation=='-'? value1-value2 :
+        operation=='*'? value1*value2 : 
+        operation == '/' ? value1 / value2 : 'Wrong Operation';
+    }
+
+
 
         // Sum of the first nth term of Series
-
         function mathOper(ser,n)
         {
             let tabSr=ser.split("+")
