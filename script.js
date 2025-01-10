@@ -208,67 +208,42 @@ function highAndLow(numbers){
             }
 
         // Find the next perfect square!
-        function findNextSquare(num){
-            if (Number.isInteger(Math.sqrt(num))){
-                   let next= Math.sqrt(num) + 1
-                   next=next * next;
-                    return next
+        function findNextSquare(sq) {
+            if (Number.isInteger(Math.sqrt(sq))){
+                   let next= Math.sqrt(sq) + 1
+                   return next * next;
             }
-            else
-             { return -1}
-
-            }
+            else  return -1;
+            
+}
 
 
             // Credit Card Mask:
 
-            function maskify(num){
-                let tab=num.split("")
-                 let newNum=[];
-                for ( let i= tab.length-1 ;i>=0;i--){
-                    if (i==tab.length-1 || i==tab.length-2||i==tab.length-3||i==tab.length-4){
-
-                       newNum.unshift(tab[i])
-                    }
-                    else{
-                          newNum.unshift("#")
-
-                    }
-                }
-                    return newNum.join("")
-                }
+            function maskify(cc) {
+                let tab=cc.split("")
+                let len=tab.length
+                return tab.map((e,i,array)=>{
+                        return (i==len-1 || i==len-2 ||i==len-3 || i==len-4)? e:"#" }).join("")       
+             }
 
 
 
                 // Sum of odd numbers
-                function sumOddTrian(n){
-    
-                        let firstN=n*(n-1)+1
-                        let sum=firstN
-                        // rest n-1 numbre
-                        let newNbre=firstN;
-                        for(let i=2;i<=n;i++){
-                        newNbre=newNbre+2
-                        sum+=newNbre
-                        }
-                        return sum
-                    }
+                function rowSumOddNumbers(n) {
+                    let firstN=n*(n-1)+1
+                    return firstN+new Array(n-1).fill(null).map((e)=>{
+                        firstN=firstN+2
+                        return firstN}).reduce((acc,init)=>acc+init,0)     
+                      }
+
+
 
                 // Find the divisors!
-                function divisors(n){
-
-                    let tabRes = [];
-                     for(let i = 2; i < n; i++) {
-                        if( n % i == 0) {
-                         tabRes.push(i)
-                         }
-                     }
-                     if(tabRes.length==0){ return n+" is prime";}
-                     else{
-                        tabRes.sort((a, b) => a - b);
-                        return tabRes
-                       }
-                    }
+              function divisors(n) {
+                let tabRes=new Array(n-2).fill(null).map((e,i)=>(i+2)).filter((e,i)=>( n % (i+2) == 0) )                
+                return (tabRes.length==0)? n+" is prime":tabRes.sort((a, b) => a - b);
+                }
     //    """"""""""""""""""""""""" Data types """"""""""""""""""""""
     // Return Negative:
     function returNegativ(num){
