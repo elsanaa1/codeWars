@@ -289,134 +289,86 @@ function highAndLow(numbers){
 
 
         // Sum of the first nth term of Series
-        function mathOper(ser,n)
-        {
-            let tabSr=ser.split("+")
-            let sum=0
-            var myArray = [];
-            for(var i = 0; i < n; i++){
-              myArray.push(tabSr[i]);
-           }
-            for(e of myArray){
-                if (e.includes("/")){
-                    let nmbres=e.split('/');
-                    let div=Number(nmbres[0])/Number(nmbres[1])
-                    sum+=div
-                }
-                else {
-                    sum+=Number(e)
-                }
-            }
-            // 2 decimal places :1,00,..
-            return sum.toFixed(2)
-
+       function SeriesSum(n) {
+           return new Array(n).fill(n).map((e,i)=> 1/((3*i)+1)).reduce((acc,init)=>acc+init,0).toFixed(2).toString()
         }
 
         // Keep Hydrated!
-        function hydrat(time){
-            let intTime=Math.floor(time)
-            let lit=intTime*0.5
-           return Math.floor(lit);
-        }
+        function litres(time) {
+            return Math.floor(Math.floor(time)*0.5);
+         }
 
         // Century From Year
 
-        function cent(y){
-
-            let rest=y%100
+        function century(year) {
             //divide by 100 to get century
-            y= Math.floor(y / 100)
-            if(rest==0){
-                return y
-            }
-            else{
-                return y+1
-            }
-
-           }
+            let y= Math.floor(year / 100)
+            return (year%100==0)? y:y+1
+          
+}
 
         //    Beginner - Lost Without a Map
-           function doublTab(tab){
-            for(let i=0;i<tab.length;i++){
-             tab[i]=2*tab[i]
-            }
-            return tab
-         }
+        function maps(x){
+             return x.map((e)=>2*e)
+}
         //  """""""""""""""""""""""""""""Strings"""""""""""""""""""""""""""""""""""""
         //  Reversed Strings
-        function inversWord(w){
-            let tab=w.split("")
-            let inv=tab.reverse().join("")
-            return inv
+        function solution(str){
+            return str.split("").reverse().join("") 
          }
 
         //  String ends with?
-        function solution(word, end){
-            let boolexist=word.includes(end,word.length-end.length)
-            return boolexist
-        }
+        function solution(str, ending){
+            return str.includes(ending,str.length-ending.length)       
+            }
 
 
         // Do I get a bonus?
-        function getBonus(salary,bonus){
-                if(bonus){ return salary*10+"£"}
-                else{ return salary+"£"}
-                }
-
+        function bonusTime(salary, bonus) {         
+            return (bonus)? "£"+salary*10 : "£"+salary
+            }
         // Abbreviate a Two Word Name
-        function abbrev(name){
+        function abbrevName(name){
             let tab=name.split(" ")
-        let firstLett=tab[0][0]
-        let lastLett=tab[1][0]
-        return firstLett.toUpperCase()+"."+lastLett.toUpperCase()
-        }
+            return tab[0][0].toUpperCase()+"."+tab[1][0].toUpperCase()
+            }
+    
 
         // DNA to RNA Conversion
         function dnaTorna(dna){
-            let rna=dna.replace(/T/g,"U");
-            return rna
+            return dna.replace(/T/g,"U");
          }
         // """""""""""""""""""""""""" Arrays""""""""""""""""""""""""""
         // Counting sheep...
-         function countSheeo(arr){
-            let count=0
-            for(e of arr){
-                if(e==true){
-                    count++
-                }
-            }
-            return count
+        function countSheeps(sheep) {  
+            return sheep.filter((e)=>e==true).reduce((acc,init)=>acc+init,0)
         }
+
 
 
         // Ones and Zeros
-        function convrt(tab){
-            let bin=tab.join("")
-         let num=parseInt(bin, 2)
-         return num
-       }
+        const binaryArrayToNumber = arr => {
+            return parseInt(arr.join(""), 2)
+          
+   };
     //    A Needle in the Haystack
-       function foundNeedle(tab){
-        for(let i=0;i<tab.length;i++){
-        if(tab[i]=="needle"){
-           return "found the needle at position "+ (i+1)
-        }
-    }
-
-    }
+    function findNeedle(haystack) {
+        let pos=haystack.findIndex((e)=>e=='needle');
+         return (pos!=-1)? ("found the needle at position "+pos) :"not found"
+         }
+      
     // Remove the minimum
 
-    function removeminArr(arr){
-        let  min=Math.min(...arr)
-        let indx=arr.indexOf(min)
-        arr.splice(indx,1)
-        return arr
-    }
+    function removeSmallest(numbers) {
+        let newarr=numbers.map((e)=>e)
+        newarr.splice(numbers.indexOf(Math.min(...numbers)),1)
+         return newarr
+   }
 
     // Convert number to reversed array of digits
-    function convrtNbr(nbr){
-        let arr=String(nbr).split("")
-        return arr
+    function digitize(n) {
+        
+        return Array.from(String(n), Number).reverse()
     }
         // """"""""""""""""""""""""""""""""Objects"""""""""""""""""""""""""""""""""
     // Make a function that does arithmetic!
