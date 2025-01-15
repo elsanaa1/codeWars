@@ -101,7 +101,7 @@ function highAndLow(numbers){
          return (countX==countO)
          }
         
-        // Square Every Digit:
+ //Problem: Square Every Digit:
         function squareDigits(num){
             return  Number(String(num).split('').map((e)=>Number(e)*Number(e)).join(""));
            }
@@ -113,8 +113,7 @@ function highAndLow(numbers){
             let tabLengths= s.split(" ").map((e)=>e.length)
             return Math.min(...tabLengths)
             }
-
-        // Complementary DNA:
+ //Problem:  Complementary DNA:
         // Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the
         // "instructions" for the development and functioning of living organisms."ATTGC" --> "TAACG"
         function dnaStrand(dna){
@@ -128,7 +127,7 @@ function highAndLow(numbers){
             return complW;
                  }
 
-        // Descending Order:
+        //Problem: Descending Order:
         // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order.
         // Essentially, rearrange the digits to create the highest possible number.
         function descendingOrder(n){
@@ -142,7 +141,7 @@ function highAndLow(numbers){
        }
         //Isograms :
 
-        // An isogram is a word that has no repeating letters, consecutive or non-consecutive.
+ //Problem:  An isogram is a word that has no repeating letters, consecutive or non-consecutive.
         // Implement a function that determines whether a string that contains only letters is an isogram.
         // Assume the empty string is an isogram. Ignore letter case.
          function isIsogram(str){
@@ -156,7 +155,7 @@ function highAndLow(numbers){
          
  }
 
-        // List Filtering:
+ //Problem: List Filtering:
         // In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
         function filter_list(l) {
             return l.filter((e)=>Number.isInteger(e))
@@ -174,7 +173,7 @@ function highAndLow(numbers){
               numbers.splice(numbers.indexOf(min),1)
              return min+Math.min(...numbers)
   }
-        // Growth of a Population:
+   //Problem:  Growth of a Population:
         // p0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)
         // the function nb_year should return n number of entire years needed to get a population greater or equal to p.
         // aug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)
@@ -244,13 +243,12 @@ function highAndLow(numbers){
                 return (tabRes.length==0)? n+" is prime":tabRes.sort((a, b) => a - b);
                 }
     //    """"""""""""""""""""""""" Data types """"""""""""""""""""""
-    // Return Negative:
+ //Problem:  Return Negative:
     function makeNegative(num) {
         return (num==0)? num:(Math.sign(num)==-1)? num: -num
         
       }
-
-    // Remove First and Last Character:
+ //Problem:  Remove First and Last Character:
     function removFirstLast(s){
         let tabS=str.split("")
         tabS.splice(tabS.length-1,1)
@@ -259,25 +257,25 @@ function highAndLow(numbers){
          // return str.slice(1, -1);
        
     }
-    // Remove String Spaces
+ //Problem:  Remove String Spaces
     // Write a function that removes the spaces from the string, then return the resultant string.
     function removWhiteSpace(s){
         return  s.split(' ').join('')
      }
 
-    // Convert boolean values to strings 'Yes' or 'No'.
+  //Problem:  Convert boolean values to strings 'Yes' or 'No'.
     function boolToWord( bool ){
         return (bool)? "Yes":"No"
        }
    
 
-    // Convert a Number to a String!
+ //Problem:  Convert a Number to a String!
     function numberToString(num) {
              return num.toString()
         }
 
     // """""""""""""""""""""""""""""""""NUmbers"""""""""""""""""""""
-    // Basic Mathematical Operations
+ //Problem:  Basic Mathematical Operations
     function basicOp(operation, value1, value2){
     return operation=='+'? value1+value2 :
         operation=='-'? value1-value2 :
@@ -287,17 +285,17 @@ function highAndLow(numbers){
 
 
 
-        // Sum of the first nth term of Series
+ //Problem:  Sum of the first nth term of Series
        function SeriesSum(n) {
            return new Array(n).fill(n).map((e,i)=> 1/((3*i)+1)).reduce((acc,init)=>acc+init,0).toFixed(2).toString()
         }
 
-        // Keep Hydrated!
+ //Problem:  Keep Hydrated!
         function litres(time) {
             return Math.floor(Math.floor(time)*0.5);
          }
 
-        // Century From Year
+      //Problem: Century From Year
 
         function century(year) {
             //divide by 100 to get century
@@ -306,57 +304,57 @@ function highAndLow(numbers){
           
 }
 
-        //    Beginner - Lost Without a Map
+      //Problem:    Beginner - Lost Without a Map
         function maps(x){
              return x.map((e)=>2*e)
 }
         //  """""""""""""""""""""""""""""Strings"""""""""""""""""""""""""""""""""""""
-        //  Reversed Strings
+       //Problem:  Reversed Strings
         function solution(str){
             return str.split("").reverse().join("") 
          }
 
-        //  String ends with?
+       //Problem:  String ends with?
         function solution(str, ending){
             return str.includes(ending,str.length-ending.length)       
             }
 
 
-        // Do I get a bonus?
+       //Problem: Do I get a bonus?
         function bonusTime(salary, bonus) {         
             return (bonus)? "£"+salary*10 : "£"+salary
             }
-        // Abbreviate a Two Word Name
+       //Problem:  Abbreviate a Two Word Name
         function abbrevName(name){
             let tab=name.split(" ")
             return tab[0][0].toUpperCase()+"."+tab[1][0].toUpperCase()
             }
     
 
-        // DNA to RNA Conversion
+       //Problem:  DNA to RNA Conversion
         function dnaTorna(dna){
             return dna.replace(/T/g,"U");
          }
         // """""""""""""""""""""""""" Arrays""""""""""""""""""""""""""
-        // Counting sheep...
+        //Problem: Counting sheep...
         function countSheeps(sheep) {  
             return sheep.filter((e)=>e==true).reduce((acc,init)=>acc+init,0)
         }
 
 
 
-        // Ones and Zeros
+        //Problem: Ones and Zeros
         const binaryArrayToNumber = arr => {
             return parseInt(arr.join(""), 2)
           
    };
-    //    A Needle in the Haystack
+  //Problem:    A Needle in the Haystack
     function findNeedle(haystack) {
         let pos=haystack.findIndex((e)=>e=='needle');
          return (pos!=-1)? ("found the needle at position "+pos) :"not found"
          }
       
-    // Remove the minimum
+  //Problem: Remove the minimum
 
     function removeSmallest(numbers) {
         let newarr=numbers.map((e)=>e)
@@ -364,7 +362,7 @@ function highAndLow(numbers){
          return newarr
    }
 
-    // Convert number to reversed array of digits
+  //Problem:  Convert number to reversed array of digits
     function digitize(n) {
         
         return Array.from(String(n), Number).reverse()
