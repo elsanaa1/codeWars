@@ -1,6 +1,6 @@
 
 // """""""""""""""""""""""""""""Wharming Up"""""""""""""""""""""""""""""""""""
-//Vowel count:
+// problem:Vowel count:
 //  Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, u as vowels for this Kata (but not y).
 // The input string will only consist of lower case letters and/or spaces.
@@ -17,7 +17,7 @@ function getCount(str) {
 
 
 
-// Even or odd:
+// problem: Even or odd:
 // Create a function that takes
 // an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 // Solution:
@@ -31,7 +31,7 @@ if(num%2==0){
 
 }
 
-// Get the middle caracter:
+// problem: Get the middle caracter:
 // You are going to be given a non-empty string. Your job is to return the middle character(s) of the string.
 // If the string's length is odd, return the middle character.
 // If the string's length is even, return the middle 2 characters.
@@ -42,7 +42,7 @@ function getMiddle(s) {
 }
 
 
-// Opposite number:
+// problem: Opposite number:
 // Very simple, given a number (integer / decimal / both depending on the language),
 //  find its opposite (additive inverse).
 // Solution:
@@ -52,7 +52,7 @@ function opposite(number) {
     return (sign==0) ? (number) : ( (sign==1) ? (Number("-"+number)) : Math.abs(Number(number)) );
 }
 
-// Mumbling:
+// problem: Mumbling:
 //his time no story, no theory. The examples below show you how to write function accum:
 // accum("abcd") -> "A-Bb-Ccc-Dddd"
 // The parameter of accum is a string which includes only letters from a..z and A..Z.
@@ -81,7 +81,7 @@ function disemvowel(str) {
     
 
 
-// Highest and Lowest:
+// problem: Highest and Lowest:
 // In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
 // Output string must be two numbers separated by a single space, and highest number is first.
 function highAndLow(numbers){
@@ -90,8 +90,7 @@ function highAndLow(numbers){
     }
 
 
-
-    // Exes and Ohs:
+// problem: Exes and Ohs:
     // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive.
     //  The string can contain any char.
     //  Examples input/output: XO("ooxx") => true
@@ -371,7 +370,7 @@ function highAndLow(numbers){
         return Array.from(String(n), Number).reverse()
     }
         // """"""""""""""""""""""""""""""""Objects"""""""""""""""""""""""""""""""""
-    // Make a function that does arithmetic!
+ // problem: Make a function that does arithmetic!
     function mathOper(a,b,op){
         if(op== "add" ){return a+b}
         else if(op=="subtract"){return a-b}
@@ -381,33 +380,28 @@ function highAndLow(numbers){
 
 
 
-        // Regular Ball Super Ball:
+     // problem: Regular Ball Super Ball:
 
-        class Ball{
+        var Ball = function(ballType) {
+            this.ballType=ballType || 'regular'
+           
+            };
 
-            constructor( type="regular"){
-                 this.ballType=type
-            }
+       // problem: Make them bark!
+        var Dog= function(name, breed, sex, age){
+            this.name  = name;
+            this.breed = breed;
+            this.sex   = sex;
+            this.age   = age;
         }
-
-        // Make them bark!
-
-        class Dog{
-            constructor(name, breed, sex, age){
-               this.name  = name;
-               this.breed = breed;
-               this.sex   = sex;
-               this.age   = age;
-            }
-
-            bark(){
-                return 'Woof!'
-            }
-        }
+        Dog.prototype.bark=function(){   return 'Woof!'}
+        
+ 
+     
 
 
 
-        // Add property to every object in array
+        // problem:Add property to every object in array
         function addProp(arr){
                 for(let e of arr){
                     e.usersAnswer=null
@@ -416,188 +410,116 @@ function highAndLow(numbers){
                 }
 
 
-// Switch/Case - Bug Fixing #6
-       function switchcas(x){
-            let value
-            switch (x) {
-            case 0:
-                value = "Off";
-                break;
-            case 1:
-                value = "On";
-                break;
-            default:
-                value = "you need x to be same type with switch values";
-                break;
+
+
+        // problem: FIXME: Get Full Name
+
+        class Dinglemouse{
+
+            constructor( firstName, lastName ){
+              this.firstName=firstName;
+              this.lastName=lastName;
             }
-            return value 
+            
+            getFullName(){
+              return this.firstName+" "+this.lastName
             }
-        console.log(switchcas("0"));
-        // solution: switch use comparison '===' type check 
-         console.log(switchcas(0));
-
-
-
-
-        //  FIXME: Get Full Name
-
-        function returnFull(first,last){
-            let pers={}
-            pers.first=first
-            pers.last=last
-            return "full name: " +pers.first +" "+ pers.last
-        }
+            
+          }
 
       //"""""""""""""""""""""" Basic Language Features"""""""""""""""""
-    //   Grasshopper - Summation
+   // problem: Grasshopper - Summation
 
-        function summ(nbr){
-            let sm=0
-          for(let i=1;i<=nbr;i++){
-              sm=sm+i;
-            }
-          return sm;
-        }
-     // Jenny's secret message
-        function greeting(name){
-            let gre="Hello "+name
-            return gre
-        }
+   var summation = function (num) {
+    return  new Array(num).fill(num).map( (e,i) => i+1 ).reduce((acc,init)=>acc+init,0);
+}
+   // problem: Jenny's secret message
+   function greeting(name){
+    let gre="Hello "+name
+    return gre
+}
 
-        // Function 1 - hello world
+    // problem: Function 1 - hello world
         function greet(){
             let greet="hello World"
             return greet
         }
-        // Count the Monkeys!
-        function count(n){
-            let tabNum=[]
-            for(let i=1;i<=n;i++){
-                tabNum.push(i)
-            }
-            return tabNum
-        }
-        // Are You Playing Banjo?
-        function nameplay(name){
-            if(name[0].toLowerCase()=='r'){
-                return name + " plays banjo"
-            }
-            else {return name + " does not play banjo"}
-        }
+       // problem: Count the Monkeys!
+       function monkeyCount(n) {
 
+        return new Array(n).fill(n).map((e,i)=> i+1)
+    }
+
+       // problem: Are You Playing Banjo?
+       function areYouPlayingBanjo(name) {
+        return (name[0].toLowerCase()=='r')? name + " plays banjo": name + " does not play banjo"
+               
+          
+           }
+   
+   
 
         // """""""""""""""""""""Control Flow""""""""""""""""""""""""""
-        // Find the capitals
+       // problem: Find the capitals
 
         function isUpper(word){
-            let tabindices=[]
-             for(let i=0;i<=word.length-1;i++){
-                 if(word[i]==word[i].toUpperCase()){
-                     tabindices.push(i)
-                 }
-             }
-             return tabindices
+            var capitals = function (word) {
+        //filter elements then remove whitespaces , be careful ""==0
+        return word.split('').map((e,i,arr)=> {return (arr[i]==arr[i].toUpperCase())? i:''} ) .filter((e)=>(String(e)!=''))    
+    }
         }
 
-        // Plural
-        function plural(nbr){
-            if(nbr==1){return false}
-            else{ return true}
+     // problem: Plural
+        function plural(n){
+            function plural(n) {
+                return (n!=1)
+                        
+            }
         }
-        // Drink about
-
-        function drink(age){
-            let drink;
-            if(age<14){drink="toddy"}
-            else if (age<18){drink="coke"}
-            else if(age<21){drink="beer"}
-             else if(age>=21){drink="whisky"}
-
-             return "drink "+drink
-        }
-        // Leonardo Dicaprio and Oscars
-        function leo(oscar) {
-            if(oscar==88){return "Leo finally won the oscar! Leo is happy"}
-            else if(oscar==86){return "Not even for Wolf of wallstreet?!"}
-            else if(oscar<88){return "When will you give Leo an Oscar?"}
-            else if(oscar>88){return "Leo got one already!"}
-            
-        }
+  // problem: Drink about
+  function peopleWithAgeDrink(old) {
+ 
+    let dr="drink ";
+return (old<14)? dr+"toddy" :(old<18)? dr+"coke":(old<21)?dr+"beer":(old>=21)? dr+"whisky":'';
+     
+};
+   // problem: Leonardo Dicaprio and Oscars
+   function leo(oscar){
+    return (oscar==88)? "Leo finally won the oscar! Leo is happy":(oscar==86)? "Not even for Wolf of wallstreet?!":(oscar<88)?"When will you give Leo an Oscar?":(oscar>88)? "Leo got one already!":'';
+  
+  }
 
 // """"""""""""""""""""""""""""Loops"""""""""""""""""""""""""""""""""""
 
-        // Sentence Smash
+    // problem: Sentence Smash
 
-        function smash(arrword){
-            let word=arrword.join(" ")
-            return word
+    function smash (words) {
+        return words.join(" ")
+    }
+
+      // problem: If you can't sleep, just count sheep!!
+
+      var countSheep = function (num){
+        let counts=""
+        for(let i=1;i<=num;i++){
+            counts+=i+" sheep..."
         }
-        // If you can't sleep, just count sheep!!
+    return counts
+    }
 
-        function countSh(n){
-            let counts=""
-            for(let i=1;i<=n;i++){
-                counts+=i+" sheep..."
-            }
-        return counts
+
+
+     // problem: Double Char:
+     function doubleChar(str) {
+        let tab=str.split('')
+        tab.forEach((e,i)=> tab[i]=tab[i].repeat(2) )
+        return tab.join('');
         }
-
-
-        // Double Char:
-        function doubleChar(word){
-            let newWord="";
-            let resultTab=[];//table of mumbling words
-           for(let i=1;i<=word.length;i++){
-                // repeat i times every caracter
-                for(let j=1;j<=2;j++){
-                    
-                        newWord+=word[i-1]
-               }
-               resultTab.push(newWord)
-               newWord=""
-        
-            }
-        
-             let resultWord=resultTab.join("")
-             return resultWord
-        
-        }
-
-
-        // Unfinished Loop - Bug Fixing #1
-        // code:
-        // let n=10;
-        // for (let i =0; i<n; i--)
-        //     console.log("hello");
-        //solution :
-        let n=10;
-         for (let i =0; i<n; i++)
-         console.log("hello");
-
-        //  Sum of numbers from 0 to N
-         function sumSeries(n){
-            if(Math.sign(n)==-1){
-               return n+"<0"
-           }
-           else if(Math.sign(n)==0)
-               {return n+"=0"}
-           else 
-            {
-                let sum=0
-                let retExp=[]
-                for(let i=0;i<=n;i++){
-                    sum+=i
-                    retExp.push(i)
-                }
-                return retExp.join("+")+"="+sum
-            }
-           
-
-        }
+                
 
 
     //    """""""""""""""""""""""""""""""""""""""" #Changing Gears""""""""""""""""""""""""""""""""""""""""""""
-        // Multiples of 3 or 5
+      // problem: Multiples of 3 or 5
 
         function sumMultip(n){
             let mult3=0
@@ -622,7 +544,7 @@ function highAndLow(numbers){
         
 
 
-        // Sum of Digits / Digital Root,Digital root is the recursive sum of all the digits in a number.
+      //problem: Sum of Digits / Digital Root,Digital root is the recursive sum of all the digits in a number.
         function recSumdigits(num){
             
             while(num.toString().length>1){
@@ -641,29 +563,31 @@ function highAndLow(numbers){
         }
 
     
-        // Who likes it?
+      //problem: Who likes it?
       
-        function wholike(arr){
-            if(arr.length==0){
-                return "no one likes this"
-            }
-        else if(arr.length==1){return arr[0]+" likes this" }
-        else if(arr.length==2){return arr[0]+ " and "+ arr[1] +" like this"}
-        else if(arr.length==3){
-                 return  arr[0]+ ","+ arr[1]+" and " +arr[2]+ " like this"}
-        else{
-            let arrname=[]
-            for(let i=0;i<arr.length-2;i++)
-            {
-                arrname.push(arr[i])
-            }
-            return arrname.join(", ")+' and 2 others like this'
+      function likes(arr) {
+        if(arr.length==0){
+            return "no one likes this"
         }
+    else if(arr.length==1){return arr[0]+" likes this" }
+    else if(arr.length==2){return arr[0]+ " and "+ arr[1] +" like this"}
+    else if(arr.length==3){
+             return  arr[0]+ ", "+ arr[1]+" and " +arr[2]+ " like this"}
+    else{
+        let arrname=[]
+        for(let i=0;i<arr.length-2;i++)
+        {
+            arrname.push(arr[i])
         }
-        
+        return arrname[0]+ ", "+ arrname[1]+' and '+(arr.length-2)+' others like this';
+    }
+
+    }
+    
 
 
-        // Find The Parity Outlier:
+
+   //problem: Find The Parity Outlier:
             // even array : exist o1 elemnt even between 2 odd elements , it can be in first or end or middle of array
             // odd =1; even=0
             function parityarr(arr){
@@ -700,7 +624,7 @@ function highAndLow(numbers){
             }
 
 
-            // Stop gninnipS My sdroW!
+         //problem:Stop gninnipS My sdroW!
 
             function stopgninnip(s){
                 let tab=s.split(" ")
@@ -715,15 +639,21 @@ function highAndLow(numbers){
                      
                 }
                 
-                     //  Reverse Strings
-                        function inversWord(w){
-                            let tab=w.split("")
-                            let inv=tab.reverse().join("")
-                            return inv
-                         }
-                return newtab.join(" ")
-                }
-    
+                     //problem:  Reverse Strings
+                     function spinWords(s){
+                        let tab=s.split(" ")
+                        let newtab=[]
+                        for(e of tab){
+                             if(e.length>4) newtab.push(inversWord(e))               
+                             else newtab.push(e)}
+                        //  Reverse Strings
+                                function inversWord(w){
+                                    return w.split("").reverse().join("")
+                                 }
+                        return newtab.join(" ")
+                        }
+            
+                    }
 
 
       // """"""""""""""""""""""""""""""""""""""Fire At Will """""""""""""""""""""""""""
@@ -807,124 +737,124 @@ function highAndLow(numbers){
         }
     
 
-       //  Problem 3: Last digit of a huge number:https://www.codewars.com/kata/5518a860a73e708c0a000027
-//   For a given list [x1, x2, x3, ..., xn] compute the last (decimal) digit of x1 ^ (x2 ^ (x3 ^ (... ^ xn))).
-// E. g., with the input [3, 4, 2], your code should return 1 because 3 ^ (4 ^ 2) = 3 ^ 16 = 43046721.
-// Beware: powers grow incredibly fast. For example, 9 ^ (9 ^ 9) has more than 369 millions of digits. lastDigit has to deal with such numbers efficiently.
-// Corner cases: we assume that 0 ^ 0 = 1 and that lastDigit of an empty list equals to 1.
-function lastdigit(arrNum) {
-    let len=arrNum.length
-    let resul=1// in case of empty list return 1(0pow(0)=1)
-    //start from array's end to calculate the power 
-    for(let i=len-1;i>=0;i--){
-        resul=Math.pow(arrNum[i],resul)
-    }
-    let s=resul.toString();
-    let lastdigit=s[s.length-1];
-    return lastdigit
-}
+//        //  Problem 3: Last digit of a huge number:https://www.codewars.com/kata/5518a860a73e708c0a000027
+// //   For a given list [x1, x2, x3, ..., xn] compute the last (decimal) digit of x1 ^ (x2 ^ (x3 ^ (... ^ xn))).
+// // E. g., with the input [3, 4, 2], your code should return 1 because 3 ^ (4 ^ 2) = 3 ^ 16 = 43046721.
+// // Beware: powers grow incredibly fast. For example, 9 ^ (9 ^ 9) has more than 369 millions of digits. lastDigit has to deal with such numbers efficiently.
+// // Corner cases: we assume that 0 ^ 0 = 1 and that lastDigit of an empty list equals to 1.
+// function lastdigit(arrNum) {
+//     let len=arrNum.length
+//     let resul=1// in case of empty list return 1(0pow(0)=1)
+//     //start from array's end to calculate the power 
+//     for(let i=len-1;i>=0;i--){
+//         resul=Math.pow(arrNum[i],resul)
+//     }
+//     let s=resul.toString();
+//     let lastdigit=s[s.length-1];
+//     return lastdigit
+// }
 
 
 
-    // Problem 4: The soul of wit: reverse an array:https://www.codewars.com/kata/59b81886460387d8fc000043
-// No time for stories. Reverse an array, return the result. Do whatever you want with the original array.
-// Don't use Array.prototype.reverse.
-function reversArr(arr){    
-    let len=arr.length
-    let revArr=[]
-    for(let i=len-1;i>=0;i--){
-          revArr.push(arr[i])
-       }
-    return revArr
+//     // Problem 4: The soul of wit: reverse an array:https://www.codewars.com/kata/59b81886460387d8fc000043
+// // No time for stories. Reverse an array, return the result. Do whatever you want with the original array.
+// // Don't use Array.prototype.reverse.
+// function reversArr(arr){    
+//     let len=arr.length
+//     let revArr=[]
+//     for(let i=len-1;i>=0;i--){
+//           revArr.push(arr[i])
+//        }
+//     return revArr
    
-   } 
+//    } 
     
 
-   // problem 5:Weird prime generator:https://www.codewars.com/kata/562b384167350ac93b00010c
-//    Write functions:
-// 1: an(n) with parameter n: returns the first n terms of the series of a(n) (not tested)
-// 2: gn(n) with parameter n: returns the first n terms of the series of g(n) (not tested)
-// 3: countOnes(n) with parameter n: returns the number of 1 in the series gn(n) 
-//     (don't forget to add a `1` at the head) # (tested)
-// 4:  p(n) with parameter n: returns an array filled with the n first distinct primes in the same order they are found in the sequence gn (not tested)
-// 5: maxPn(n) with parameter n: returns the biggest prime number of the above p(n) # (tested)
-// 6: anOver(n) with parameter n: returns an array (n terms) of the a(i)/i for every i such g(i) != 1 (not tested but interesting result)
-// 7: anOverAverage(n) with parameter n: returns as an *integer* the average of anOver(n) # (tested)
-// Solution:
-function an(n){
-    let an=[7]
-    for(let i=1;i<n;i++){
-        // a(n) = a(n-1) + gcd(n, a(n-1)) for "n >= 2"
-        let e=an[i-1]+gcd(i+1,an[i-1])
-        an.push(e)
-    }
-    return an
-    //calcul gcd
-    function gcd(a, b) {
-      if (!b) {
-        return a;
-      }
-      return gcd(b, a % b);
-    }
-}
-// gn function
-function gn(n){
-    let anArr=[]
-    anArr=an(n);
-    let gn=[1];// first element is 1
-    for(let i=0;i<n-1;i++){
-        let e=anArr[i+1]-anArr[i]
-        gn.push(e)
-    }
-    return gn;
-}
+//    // problem 5:Weird prime generator:https://www.codewars.com/kata/562b384167350ac93b00010c
+// //    Write functions:
+// // 1: an(n) with parameter n: returns the first n terms of the series of a(n) (not tested)
+// // 2: gn(n) with parameter n: returns the first n terms of the series of g(n) (not tested)
+// // 3: countOnes(n) with parameter n: returns the number of 1 in the series gn(n) 
+// //     (don't forget to add a `1` at the head) # (tested)
+// // 4:  p(n) with parameter n: returns an array filled with the n first distinct primes in the same order they are found in the sequence gn (not tested)
+// // 5: maxPn(n) with parameter n: returns the biggest prime number of the above p(n) # (tested)
+// // 6: anOver(n) with parameter n: returns an array (n terms) of the a(i)/i for every i such g(i) != 1 (not tested but interesting result)
+// // 7: anOverAverage(n) with parameter n: returns as an *integer* the average of anOver(n) # (tested)
+// // Solution:
+// function an(n){
+//     let an=[7]
+//     for(let i=1;i<n;i++){
+//         // a(n) = a(n-1) + gcd(n, a(n-1)) for "n >= 2"
+//         let e=an[i-1]+gcd(i+1,an[i-1])
+//         an.push(e)
+//     }
+//     return an
+//     //calcul gcd
+//     function gcd(a, b) {
+//       if (!b) {
+//         return a;
+//       }
+//       return gcd(b, a % b);
+//     }
+// }
+// // gn function
+// function gn(n){
+//     let anArr=[]
+//     anArr=an(n);
+//     let gn=[1];// first element is 1
+//     for(let i=0;i<n-1;i++){
+//         let e=anArr[i+1]-anArr[i]
+//         gn.push(e)
+//     }
+//     return gn;
+// }
 
-function  countOnes(n){
-    let count=0
-    let gArr=gn(n)
-     for(let i=0;i<n;i++){
-        if(gArr[i]==1){
-            count++
-        }
-     }
-    return count;
-}
+// function  countOnes(n){
+//     let count=0
+//     let gArr=gn(n)
+//      for(let i=0;i<n;i++){
+//         if(gArr[i]==1){
+//             count++
+//         }
+//      }
+//     return count;
+// }
 
-function  p(n){
-    let retArr=[]
-    let gnArr=gn(n)
-    for(let i=0;i<n;i++){
-        if(gnArr[i]!=1){
-            retArr.push(gnArr[i])
-        }
-     }
-    return retArr;
-}
+// function  p(n){
+//     let retArr=[]
+//     let gnArr=gn(n)
+//     for(let i=0;i<n;i++){
+//         if(gnArr[i]!=1){
+//             retArr.push(gnArr[i])
+//         }
+//      }
+//     return retArr;
+// }
 
 
 
-function maxPn(n){
-    let pnArr=p(n)
-    return Math.max(...pnArr)
-}
+// function maxPn(n){
+//     let pnArr=p(n)
+//     return Math.max(...pnArr)
+// }
 
-function anOver(n){
-    let aArr=an(n)
-    let retArr=[]
-    for(let i=0;i<n;i++){
-         let e=Math.floor(aArr[i]/(i+1))
-         retArr.push(e)
-    }
-    return retArr
-}
+// function anOver(n){
+//     let aArr=an(n)
+//     let retArr=[]
+//     for(let i=0;i<n;i++){
+//          let e=Math.floor(aArr[i]/(i+1))
+//          retArr.push(e)
+//     }
+//     return retArr
+// }
 
-function anOverAverage(n){
-    let sum=0
-    let arr=anOver(n)
-    let len =arr.length
-     for(let i=0;i<n;i++){
-         sum+=arr[i]
-    }
-    return Math.floor(sum/len)
+// function anOverAverage(n){
+//     let sum=0
+//     let arr=anOver(n)
+//     let len =arr.length
+//      for(let i=0;i<n;i++){
+//          sum+=arr[i]
+//     }
+//     return Math.floor(sum/len)
     
-}
+// }
