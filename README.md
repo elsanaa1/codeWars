@@ -1,2 +1,2 @@
 # codeWars
-codeWars practice JavaScript
+codeWars practice JavaScript ES6
